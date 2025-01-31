@@ -1,7 +1,5 @@
-# sNAX
-A docker implementation of the RiboMarker mapping and feature counting pipeline.
+![Overview](assets/image.png)
 
-A robust and reproducible pipeline for processing RNA-seq data.
 
 # Overview
 
@@ -21,12 +19,12 @@ The pipeline flows as follows:
 
 1. Clone this repository:
    ```bash
-   git clone git@github.com:Aimann/snax-priv.git
+   git clone git@github.com:Aimann/snax-pub-run.git
     ```
 
-2. Build the Docker image:
+2. Pull the docker image from GitHub:
    ```bash
-   docker build -t snax .
+   docker pull ghcr.io/aimann/snax:latest
    ```
 
 3. Verify that the Docker image was created successfully:
@@ -98,11 +96,10 @@ The pipeline generates the following output files in the following structure
 ├── RiboMarker-featuretypes.csv # Feature types
 ├── RiboMarker-typecounts.csv # RNA type counts
 ├── RiboMarker-typelengths.csv # Read lengths for each RNA type
-├── RiboMarker-deseq-counts.csv # Filtered counts for rRNA, tRNA, miRNA, lncRNA, snRNA, snoRNA, protein_coding above cutoffs
-├── RiboMarker-deseq-normalizedcounts.csv # Normalized counts for rRNA, tRNA, miRNA, lncRNA, snRNA, snoRNA, protein_coding
-├── RiboMarker-deseq-sizeFactors.csv # DESeq2 size factors for normalization
+├── RiboMarker-filtered-readcounts.csv # Read counts filtered by read minimum and fraction samples minimum and for biotypes
 ├── ...
 ```
+
 # Usage
 
 ## Required input files
@@ -147,14 +144,12 @@ Required parameters:
    output_prefix: RiboMarker     # Prefix to use for the output files
    samples: samples.csv          # Path to the sample sheet file with the following format: sample_id,group_id,fastq1
    species: human                # Species to use for alignment and feature counting (e.g., human, mouse, rat)
-   scaler: deseq                 # Method to use for scaling the counts (e.g., deseq, RiboSpike-30-T1)
    trim_fastq: True/False        # Whether to trim the input FASTQ files, True/False
    collapse_reads: True/False    # Whether to collapse the reads before alignment, True/False
    ```
 Optional parameters:
    ```yaml
    trim_only: True/False         # Whether to only trim the input FASTQ files, True/False
-   pairs.csv: pairs.csv          # Path to the pairs file with the following format: group_1,group_2. Add this parameter if you want to compare two groups using DESeq2.
    count_ribospike: True/False   # Whether to count RiboSpike reads, True/False
    multimap: 100                 # Maximum number of multimapping reads to keep
    read_minimum: 10              # Minimum # of reads a feature must have to be included in the analysis; combined with fraction_minimum
