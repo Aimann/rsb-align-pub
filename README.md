@@ -1,7 +1,3 @@
-<div style="text-align: center;">
-  <img src="assets/image.png" alt="Overview" style="width: 50%; max-width: 800px;">
-</div>
-
 # Overview
 
 RiboMarker is a pipeline for mapping and feature counting of RNA-seq data. It is designed to process ribosome profiling data and identify different types of RNA features, such as rRNA, tRNA, miRNA, lncRNA, snRNA, snoRNA, and protein-coding genes. The pipeline uses bowtie or bowtie2 for mapping. It also provides options for trimming the input FASTQ files and collapsing the reads before alignment.
@@ -13,8 +9,6 @@ The pipeline flows as follows:
 3. Map the reads to the reference genome using bowtie or bowtie2.
 ![Overview](overview.jpg)
 4. Parse the mapping results and count the reads for each feature.
-5. Normalize the counts using DESeq2 size factors (optional).
-6. Generate a summary report and output files.
 
 # Installation
 
@@ -114,12 +108,21 @@ fastq_files: raw or trimmed fastq files
 
 The `samples.csv` file should have the following format:
    ```
-   sample1,group1,/path/to/sample1_R1.fastq.gz
-   sample2,group1,/path/to/sample2_R1.fastq.gz
-   sample3,group2,/path/to/sample3_R1.fastq.gz
-   sample4,group2,/path/to/sample4_R1.fastq.gz
+   sample1,group1,/path/to/sample1.fastq.gz
+   sample2,group1,/path/to/sample2.fastq.gz
+   sample3,group2,/path/to/sample3.fastq.gz
+   sample4,group2,/path/to/sample4.fastq.gz
    ```
-   The sample sheet file should be specified in the `config.yaml` file. Do not include spaces or special characters in the sample IDs or group IDs, only use letters, numbers, and underscores.
+
+For paired-end reads the `samples.csv` file should have the following format:
+   ```
+   sample1,group1,/path/to/sample1.R1.fastq.gz,/path/to/sample1.R2.fastq.gz
+   sample2,group1,/path/to/sample2.R1.fastq.gz,/path/to/sample2.R2.fastq.gz
+   sample3,group2,/path/to/sample3.R1.fastq.gz,/path/to/sample3.R2.fastq.gz
+   sample4,group2,/path/to/sample4.R1.fastq.gz,/path/to/sample4.R2.fastq.gz
+   ```
+
+The sample sheet file should be specified in the `config.yaml` file. Do not include spaces or special characters in the sample IDs or group IDs, only use letters, numbers, and underscores.
 
 ## 1. Create a directory for your data and place your input files there.
 
