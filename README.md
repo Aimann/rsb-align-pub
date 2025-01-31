@@ -108,18 +108,18 @@ fastq_files: raw or trimmed fastq files
 
 The `samples.csv` file should have the following format:
    ```
-   sample1,group1,/path/to/sample1.fastq.gz
-   sample2,group1,/path/to/sample2.fastq.gz
-   sample3,group2,/path/to/sample3.fastq.gz
-   sample4,group2,/path/to/sample4.fastq.gz
+   sample1,group1,sample1.fastq.gz
+   sample2,group1,sample2.fastq.gz
+   sample3,group2,sample3.fastq.gz
+   sample4,group2,sample4.fastq.gz
    ```
 
 For paired-end reads the `samples.csv` file should have the following format:
    ```
-   sample1,group1,/path/to/sample1.R1.fastq.gz,/path/to/sample1.R2.fastq.gz
-   sample2,group1,/path/to/sample2.R1.fastq.gz,/path/to/sample2.R2.fastq.gz
-   sample3,group2,/path/to/sample3.R1.fastq.gz,/path/to/sample3.R2.fastq.gz
-   sample4,group2,/path/to/sample4.R1.fastq.gz,/path/to/sample4.R2.fastq.gz
+   sample1,group1,sample1.R1.fastq.gz,sample1.R2.fastq.gz
+   sample2,group1,sample2.R1.fastq.gz,sample2.R2.fastq.gz
+   sample3,group2,sample3.R1.fastq.gz,sample3.R2.fastq.gz
+   sample4,group2,sample4.R1.fastq.gz,sample4.R2.fastq.gz
    ```
 
 The sample sheet file should be specified in the `config.yaml` file. Do not include spaces or special characters in the sample IDs or group IDs, only use letters, numbers, and underscores.
