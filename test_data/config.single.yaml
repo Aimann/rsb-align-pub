@@ -31,7 +31,7 @@ subsample_reads: 0      # Optional: Number of reads to subsample to for each sam
 
 count_ribospike: True         # Count RiboSpike reads in the output
 multimap: 100                 # Maximum allowed multimapped reads
-threads: 20                   # Number of processing threads
+threads: 8                   # Number of processing threads
 read_minimum: 10              # Minimum reads for a feature to be considered, used with fraction_samples_minimum
 fraction_samples_minimum: 0.1 # Minimum fraction of samples that must have read_minimum reads for a feature to be considered
 

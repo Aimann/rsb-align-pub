@@ -30,6 +30,6 @@ docker run --rm \
   -v "${config_file}":/pipeline/config.yaml \
   -v "${output_dir}":/pipeline/"${output_prefix}" \
   -w /pipeline \
-  snax \
+  ghcr.io/aimann/snax \
   --cores "${cores}" \
   "$@"
