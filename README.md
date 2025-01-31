@@ -1,5 +1,6 @@
-![Overview](assets/image.png)
-
+<div style="text-align: center;">
+  <img src="assets/image.png" alt="Overview" style="width: 50%; max-width: 800px;">
+</div>
 
 # Overview
 
