@@ -1,0 +1,43 @@
+###############################################################################################
+# REQUIRED # Path to input and output directories, sample metadata, and normalization method.
+###############################################################################################
+
+# Directory containing input files. This contains the samples.csv file and the fastq file paths relative to this directory.
+input_dir: "/path/to/paired_human/input/"           
+output_prefix: "paired"      # Prefix for output files
+samples: "samples.csv"       # Sample metadata (relative to input_dir)
+species: "human"             # Available options: "human", "mouse", etc. or provide custom database paths and BED files
+scaler: "deseq"              # Default normalization method is 'deseq'. If you have a known spike-in, use it, e.g. 'RiboSpike-30-T1'.
+
+###############################################################################################
+# REQUIRED #  Whether or not to trim fastq files before mapping or collapse the reads.
+###############################################################################################
+
+trim_fastq: True # Whether or not to trim fastq files before mapping.
+collapse: True   # Toggle to collapse reads before mapping. This speeds up mapping but loses the ability to easily subsample reads.
+trim_only: False # Only trim fastq files, do not map or collapse reads.
+paired_end: True # Toggle to indicate paired-end reads
+
+###############################################################################################
+# OPTIONAL # pairs.csv for pairwise DESeq2 comparisons. E.g. "condition1,condition2"
+###############################################################################################
+
+#pairs: "pairs.csv"  # Optional: Sample pairs for DESeq2 comparisons (relative to input_dir)
+subsample_reads: 0   # Optional: Number of reads to subsample to for each sample. Default 0 is to use all reads.
+
+###############################################################################################
+## OPTIONAL PARAMETERS ##
+###############################################################################################
+
+count_ribospike: False           # Count RiboSpike reads in the output
+multimap: 100                   # Maximum allowed multimapped reads
+threads: 20                     # Number of processing threads
+read_minimum: 10                # Minimum reads for a feature to be considered, used with fraction_samples_minimum
+fraction_samples_minimum: 0.1   # Minimum fraction of samples that must have read_minimum reads for a feature to be considered
+
+###############################################################################################
+# End of config.single.yaml
+###############################################################################################
+
+# dbpaths: "dbpaths.csv"  # Path to custom dbpaths.csv file (relative to input_dir)
+# bed: "bed"  # Path to custom BED files (relative to input_dir)
