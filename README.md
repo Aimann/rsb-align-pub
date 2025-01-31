@@ -159,22 +159,8 @@ Optional parameters:
 
    - Modify the `species` parameter to specify the species to use for alignment and feature counting (e.g., human, mouse, rat).
 
-   - Modify the `scaler` parameter to specify the method to use for scaling the counts (e.g., deseq, tpm). If you choose `deseq`, the counts will be normalized using DESeq2 size factors. If you provide a feature that will be used for scaling the counts, that will be used in the DESeq2 normalization.
-
    - Modify the `trim_fastq` parameter to specify whether to trim the input FASTQ files. If set to `True`, the pipeline will trim the input FASTQ files using Cutadapt.
 
    - Modify the `collapse_reads` parameter to specify whether to collapse the reads before alignment. If set to `True`, the pipeline will collapse the reads prior to mapping. This significantly speeds up the mapping process; however it may make downstream bam manipulation more difficult.
-
-
-## 3. Run the pipeline using the wrapper script:
-   ```bash
-   docker run -v /path/to/your/data:/data riboMarker
-   ```
-
-   Replace `/path/to/your/data` with the path to the directory containing your input files.
-
-## 4. The output files will be saved in the specified output directory.
-
-# Citation
 
 
