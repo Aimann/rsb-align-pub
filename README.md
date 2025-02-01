@@ -7,7 +7,7 @@ The pipeline flows as follows:
 1. Trim the input FASTQ files (optional).
 2. Collapse the reads (optional).
 3. Map the reads to the reference genome using bowtie or bowtie2.
-![Overview](overview.jpg)
+![Overview](overview.png)
 4. Parse the mapping results and count the reads for each feature.
 
 # Installation
