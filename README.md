@@ -84,7 +84,6 @@ The pipeline generates the following output files in the following structure
 │   ├── sample1.collapse.fa
 │   ├── sample2.collapse.fa
 │   ├── ...
-├── RiboMarker.report.html # Summary report
 ├── RiboMarker-trimstats.csv (if trimming is 'True') # Trimming statistics
 ├── RiboMarker-mapstats.csv # Mapping statistics
 ├── RiboMarker-readcounts.csv # Read counts for all features
