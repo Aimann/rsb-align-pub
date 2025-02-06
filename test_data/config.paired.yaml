@@ -14,7 +14,7 @@ scaler: "deseq"              # Default normalization method is 'deseq'. If you h
 ###############################################################################################
 
 trim_fastq: True # Whether or not to trim fastq files before mapping.
-collapse: True   # Toggle to collapse reads before mapping. This speeds up mapping but loses the ability to easily subsample reads.
+collapse: False   # Toggle to collapse reads before mapping. This speeds up mapping but loses the ability to easily subsample reads.
 trim_only: False # Only trim fastq files, do not map or collapse reads.
 paired_end: True # Toggle to indicate paired-end reads
 
