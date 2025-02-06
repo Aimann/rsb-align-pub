@@ -23,7 +23,7 @@ The pipeline flows as follows:
 
 2. Pull the docker image from GitHub:
    ```bash
-   docker pull ghcr.io/aimann/snax:latest
+   docker pull ghcr.io/aimann/rsb-align-pub:latest
    ```
 
 3. Verify that the Docker image was created successfully:
@@ -42,7 +42,7 @@ To run the test dataset, follow these steps:
 
 2. Modify the `input_dir` parameter in the `config.yaml` file to specify the path to the `test_data` directory:
    ```yaml
-   input_dir: /path/to/snax/test_data/input/
+   input_dir: /path/to/rsb-pub-run/test_data/input/
    ```
 
 3. Run the pipeline using the wrapper script:
@@ -60,7 +60,7 @@ To run the test dataset, follow these steps:
 
 # Output files
 
-The pipeline generates the following output files in the following structure
+The pipeline generates the following output files in the following structure (using `RiboMarker` as an example `output_prefix`):
 
 ```
 /path/to/your/data/RiboMarker/
