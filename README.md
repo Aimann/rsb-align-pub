@@ -9,7 +9,9 @@ The pipeline flows as follows:
 3. Map the reads to the reference genome using bowtie or bowtie2.
 4. Parse the mapping results and count the reads for each feature.
 
+## Single-End Workflow
 ![Overview](assets/overview.single.lr.png)
+## Paired-End Workflow
 ![Overview](assets/overview.paired.lr.png)
 
 # Installation
