@@ -30,6 +30,6 @@ docker run --rm \
   -v "${config_file}":/pipeline/config.yaml \
   -v "${output_dir}":/pipeline/"${output_prefix}" \
   -w /pipeline \
-  ghcr.io/aimann/snax \
+  ghcr.io/aimann/rsb-align-pub:latest \
   --cores "${cores}" \
   "$@"
