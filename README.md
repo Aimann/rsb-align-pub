@@ -18,7 +18,7 @@ The pipeline flows as follows:
 
 1. Clone this repository:
    ```bash
-   git clone [git@github.com:Aimann/snax-pub-run.git](https://github.com/Aimann/rsb-align-pub.git)
+   git clone https://github.com/Aimann/rsb-align-pub.git
     ```
 
 2. Pull the docker image from GitHub:
